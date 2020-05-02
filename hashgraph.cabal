@@ -1,0 +1,40 @@
+cabal-version:       >=1.10
+name:                hashgraph
+version:             0.1.0.0
+-- synopsis:
+description:         Implementation of the Hashgraph ordering algorithm.
+license:             MIT
+license-file:        LICENSE
+author:              drsk
+maintainer:          drsk
+build-type:          Simple
+
+library
+  -- other-modules:
+  -- other-extensions:
+  exposed-modules:     Data.Hashgraph
+  hs-source-dirs:      src
+  build-depends:       base >=4.12 && <4.13
+                       , containers
+                       , extra
+                       , fgl
+                       , graphviz
+                       , safe
+                       , text
+  -- hs-source-dirs:
+  default-language:    Haskell2010
+
+executable test
+  main-is:            Main.hs
+  hs-source-dirs:     src/test/
+  build-depends:       base >=4.12 && <4.13
+                       , containers
+                       , extra
+                       , graphviz
+                       , hashgraph
+                       , random
+                       , safe
+                       , text
+                       , time
+
+  default-language:    Haskell2010
